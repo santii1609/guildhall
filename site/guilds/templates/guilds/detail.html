@@ -1,0 +1,12 @@
+<h1>{{ guild.name }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'guilds:vote' guild.id %}" method="post">
+{% csrf_token %}
+{% for desc in guild.description_set.all %}
+    <input type="radio" name="desc" id="desc{{ forloop.counter }}" value="{{ desc.id }}">
+    <label for="desc{{ forloop.counter }}">{{ desc.text }}</label><br>
+{% endfor %}
+<input type="submit" value="Vote">
+</form>

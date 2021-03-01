@@ -1,0 +1,9 @@
+<h1>{{ quild.name }}</h1>
+
+<ul>
+{% for desc in question.description_set.all %}
+    <li>{{ desc.text }} -- {{ desc.votes }} vote{{ desc.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'guilds:detail' guild.id %}">Vote again?</a>
