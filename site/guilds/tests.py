@@ -11,6 +11,12 @@ from .models import Guild
 # Create your tests here.
 class GuildModelTests(TestCase):
 
+
+    def test_testing_github(self):
+        testResult = True
+        self.assertIs(testResult, True)
+
+
     def test_was_created_recently_with_future_question(self):
         """
         was_published_recently() returns False for questions whose creation_date
