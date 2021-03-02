@@ -21,8 +21,10 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
+        cd site
         python -m pip install --upgrade pip
-        pip install -r site/requirements.txt
+        pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python site/manage.py test
+        cd site
+        python manage.py test
