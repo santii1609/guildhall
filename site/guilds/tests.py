@@ -14,7 +14,7 @@ class GuildModelTests(TestCase):
 
     def test_testing_github(self):
         testResult = True
-        self.assertIs(testResult, True)
+        self.assertIs(testResult, False)
 
 
     def test_was_created_recently_with_future_question(self):
