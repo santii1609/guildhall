@@ -24,6 +24,10 @@ jobs:
         cd site
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: make migrations
+      run: |
+        cd site
+        python manage.py migrate
     - name: Run Tests
       run: |
         cd site
